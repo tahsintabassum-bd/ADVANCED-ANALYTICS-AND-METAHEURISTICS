@@ -1,0 +1,33 @@
+data;
+
+#defining sets
+set gastype := A B C D E;
+set tanks := t1 t2 t3 t4 t5 t6 t7 t8;
+
+#gas capacity
+param gasCapacity :=
+    A 75000
+    B 50000
+    C 25000
+    D 80000
+    E 20000;
+    
+#tank capacity
+param tankCapacity :=
+    t1 25000 
+    t2 25000 
+    t3 30000 
+    t4 60000 
+    t5 80000 
+    t6 85000 
+    t7 100000 
+    t8 50000 ;
+    
+#pumping cost
+param cost: 
+    t1  t2  t3  t4  t5  t6  t7  t8 := 
+A   1   2   2   1   4   4   5   3
+B   2   3   3   3   1   4   5   2 
+C   3   4   1   2   1   4   5   1
+D   1   1   2   2   3   4   5   2
+E   1   1   1   1   1   1   5   5;

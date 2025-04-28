@@ -1,0 +1,23 @@
+data;
+
+set A := KCID KACK KMMU KBNA KTUL;
+
+param:    f        C      r       w   	p:=
+KCID      5100     4      0       0     2            
+KACK      2200     8.32   800     600   4
+KMMU      4700     8.99   750     500   8
+KBNA      3800     6.48   600     650   8
+KTUL      3600     9.27   800     500   8;
+
+param  pw := 200;
+param  tc := 14000;
+param  rw := 36400;
+param  lw := 31800;
+param  ow := 22800;
+param  lf := 2500;
+param  uf := 4500;
+param  sf := 7000;
+param  bf := 200; # for 1b
+
+
+
