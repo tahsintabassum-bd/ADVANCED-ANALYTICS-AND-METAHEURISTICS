@@ -1,0 +1,40 @@
+data;
+
+set PRODS := Raisins Juice Jelly;
+set INGRIDS := A B;
+
+# I ignored both of Ms. Bollman and Thomas. They fall for the sunk-cost fallacy.
+# We already bought the grapes, so we should not include their "cost" as a limitationn when deciding how to maximize profits.
+# Maximizing profits is a question of things we can change, and restrictions we have to follow. 
+# The restriciton of "quality" is just there to produce different types of products.
+# It is not going to add costs to sell some type or another. 
+# This is why I used Ms. Bollman's variable cost (without fruit cost).
+# Note that  Ms. Bollman's cost is equal to Thomas's if we ignore fruit costs.
+
+param profit :=
+    Raisins 0.8
+    Juice 2.04
+    Jelly 3.32;
+
+param demand :=
+    Raisins Infinity 
+    Juice 205000
+    Jelly 290000;
+
+param supply :=
+    A 2100000
+    B 6300000;
+
+param quality :=
+    A 9
+    B 5;
+
+param min_quality :=
+    Raisins 8
+    Juice 6
+    Jelly 5;
+
+param usage :=
+    Raisins 6.75
+    Juice 15.5
+    Jelly 19;

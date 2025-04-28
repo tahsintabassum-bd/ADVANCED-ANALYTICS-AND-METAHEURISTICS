@@ -1,0 +1,28 @@
+data;
+
+set P := A B C D E F G;
+
+param Y:= 3;
+param S := 1000000;
+param b:= 0.06;
+
+param r: A B C D E F G:=
+0 	0.0 	0.0 	0.0 	0.0 	0.0 	0.0 	0.0
+1 	0.3 	0.0 	1.1 	0.0 	0.0 	0.8 	1.1
+2 	1.0 	0.3 	0.0 	0.0 	0.0 	0.45 	0.0
+3 	0.0 	1.0 	0.0 	1.75 	1.4 	0.0 	0.15;
+
+param l :=
+A 500000
+B 500000
+C Infinity
+D Infinity
+E 750000
+F Infinity
+G Infinity;
+
+param a: A B C D E F G:=
+0 1 0 1 1 0 1 1
+1 0 1 0 0 0 0 0
+2 0 0 0 0 1 0 0
+3 0 0 0 1 1 1 1;
