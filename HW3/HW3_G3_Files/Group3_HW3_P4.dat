@@ -1,0 +1,57 @@
+data;
+
+set NODES := A S G SC UT ST RT1 OT1 RT2 OT2 RT3 OT3 FB GOG OUT;
+set ARCS := (A,*) S G
+			(S,*) SC UT ST 
+			(G,*) SC UT ST
+			(SC,*) RT1 OT1
+			(UT,*) RT2 OT2
+			(ST,*) RT3 OT3
+			(*,FB) RT1 OT1 RT2 OT2 RT3 OT3
+			(*,GOG) RT1 OT1 RT2 OT2 RT3 OT3
+			(*,OUT) FB GOG;
+			
+param: c:=
+	   [A, *] S 0 , G 0  
+	   [S, *] SC 2300, UT 2250, ST 2275
+	   [G, *] SC 2000, UT 1950, ST 1975
+	   [SC, *] RT1 90, OT1 135 
+	   [UT, *] RT2 105, OT2 157.5 
+	   [ST, *] RT3 115, OT3 172.5 
+	   [*, FB] RT1 15, OT1 15, RT2 18, OT2 18, RT3 20, OT3 20
+	   [*, GOG] RT1 8, OT1 8, RT2 14, OT2 14, RT3 24, OT3 24
+	   [*,OUT] GOG -1, FB -1;
+		
+		
+
+param: l:=
+       [A, *] S 0 , G 0  
+	   [S, *] SC 0, UT 0, ST 0
+	   [G, *] SC 0, UT 0, ST 0
+	   [SC, *] RT1 0, OT1 0 
+	   [UT, *] RT2 0, OT2 0 
+	   [ST, *] RT3 0, OT3 0 
+	   [*, FB] RT1 0, OT1 0, RT2 0, OT2 0, RT3 0, OT3 0
+	   [*, GOG] RT1 0, OT1 0, RT2 0, OT2 0, RT3 0, OT3 0
+       [*,OUT] GOG 1000, FB 600;
+		
+		
+param: u:=
+	   [A, *] S ., G .  
+	   [S, *] SC 100, UT 100, ST 100
+	   [G, *] SC 200, UT 200, ST 200
+	   [SC, *] RT1 505, OT1 100 
+	   [UT, *] RT2 465, OT2 100 
+	   [ST, *] RT3 570, OT3 100 
+	   [*, FB] RT1 505, OT1 100, RT2 505, OT2 100, RT3 505, OT3 100
+       [*, GOG] RT1 505, OT1 100, RT2 505, OT2 100, RT3 505, OT3 100
+	   [*, OUT] GOG 1000, FB 600;
+		
+param: b:= 
+			A 1600 ;
+			
+param: mu:=											
+		[A, *] S  0.0833, G 0.1			
+		[S, *] SC 12, UT 12, ST 12
+		[G, *] SC 10, UT 10, ST 10
+		[*, OUT] FB 0, GOG 0;
